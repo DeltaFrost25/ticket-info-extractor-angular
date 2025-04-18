@@ -1,0 +1,48 @@
+<div class="container">
+  <header class="app-header">
+    <h1>Ticket Information Extractor</h1>
+    <p>Upload an HTML file to extract ticket information</p>
+  </header>
+
+  <div class="file-upload-container">
+    <div class="upload-section">
+      <div class="file-upload">
+        <input type="file" id="fileInput" (change)="onFileSelected($event)" accept=".html" [disabled]="isLoading">
+        <label for="fileInput" class="file-label">
+          <i class="upload-icon">📁</i>
+          <span *ngIf="!fileName">Choose an HTML file</span>
+          <span *ngIf="fileName">{{ fileName }}</span>
+        </label>
+      </div>
+
+      <div class="action-buttons">
+        <!-- Process button is only shown if automatic processing fails or needs re-processing -->
+        <button (click)="processFile()" [disabled]="!selectedFile || isLoading" class="process-btn">
+          <span *ngIf="!isLoading">Process File</span>
+          <span *ngIf="isLoading">Processing...</span>
+        </button>
+        <button (click)="clearSelection()" [disabled]="!selectedFile || isLoading" class="clear-btn">Clear</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <div *ngIf="isLoading" class="loading-indicator">
+    <div class="spinner"></div>
+    <span>Processing ticket data...</span>
+  </div>
+
+  <div *ngIf="tickets.length > 0" class="results-container">
+    <div class="results-header">
+      <h2>Extracted Ticket Information</h2>
+      <button (click)="copyAll()" class="copy-all-btn" [class.copied]="copiedAll">
+        <i class="copy-icon">{{ copiedAll ? '✓' : '📋' }}</i> {{ copiedAll ? 'Copied!' : 'Copy All' }}
+      </button>
+    </div>
+
+    <app-ticket-table [tickets]="tickets"></app-ticket-table>
+  </div>
+</div>

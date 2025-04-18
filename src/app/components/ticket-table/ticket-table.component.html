@@ -1,0 +1,58 @@
+<div class="table-responsive">
+  <table class="ticket-table">
+    <thead>
+      <tr>
+        <th>Ticket ID</th>
+        <th>Description</th>
+        <th>Details</th>
+        <th>Resolution</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ticket of tickets">
+        <td class="ticket-id">
+          <div class="cell-content">
+            <span class="cell-text">{{ ticket.ticketId }}</span>
+            <button class="copy-btn" (click)="copyField(ticket, 'ticketId', ticket.ticketId)" [class.copied]="isCopied(ticket.ticketId, 'ticketId')">
+              <i class="copy-icon">{{ isCopied(ticket.ticketId, 'ticketId') ? '✓' : '📋' }}</i>
+            </button>
+          </div>
+        </td>
+        <td>
+          <div class="cell-content">
+            <div class="text-container">
+              <span class="cell-text">{{ ticket.description || 'Not provided' }}</span>
+            </div>
+            <button class="copy-btn" (click)="copyField(ticket, 'description', ticket.description)" [class.copied]="isCopied(ticket.ticketId, 'description')">
+              <i class="copy-icon">{{ isCopied(ticket.ticketId, 'description') ? '✓' : '📋' }}</i>
+            </button>
+          </div>
+        </td>
+        <td>
+          <div class="cell-content">
+            <div class="text-container">
+              <span class="cell-text">{{ ticket.details || 'Not provided' }}</span>
+            </div>
+            <button class="copy-btn" (click)="copyField(ticket, 'details', ticket.details)" [class.copied]="isCopied(ticket.ticketId, 'details')">
+              <i class="copy-icon">{{ isCopied(ticket.ticketId, 'details') ? '✓' : '📋' }}</i>
+            </button>
+          </div>
+        </td>
+        <td>
+          <div class="cell-content">
+            <div class="text-container">
+              <span class="cell-text">{{ ticket.resolution || 'Not provided' }}</span>
+            </div>
+            <button class="copy-btn" (click)="copyField(ticket, 'resolution', ticket.resolution)" [class.copied]="isCopied(ticket.ticketId, 'resolution')">
+              <i class="copy-icon">{{ isCopied(ticket.ticketId, 'resolution') ? '✓' : '📋' }}</i>
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="tickets.length === 0" class="no-data">
+  No ticket data found.
+</div>

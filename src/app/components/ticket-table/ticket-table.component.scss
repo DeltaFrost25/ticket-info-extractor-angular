@@ -1,0 +1,145 @@
+.table-responsive {
+  overflow-x: auto;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 0.5rem;
+  border: 1px solid #e1e8ed;
+}
+
+.ticket-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: white;
+
+  th {
+    background-color: #f1f8ff;
+    color: #2c3e50;
+    font-weight: 600;
+    text-align: left;
+    padding: 1.25rem 1rem;
+    border-bottom: 2px solid #e1e8ed;
+    font-size: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+  }
+
+  td {
+    padding: 1.25rem 1rem;
+    border-bottom: 1px solid #e1e8ed;
+    vertical-align: top;
+    transition: background-color 0.2s ease;
+  }
+
+  .ticket-id {
+    white-space: nowrap;
+    font-weight: 500;
+    color: #3498db;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  tr:hover {
+    background-color: #f8fafe;
+    td {
+      transition: background-color 0.2s ease;
+    }
+  }
+
+  // Zebra striping for better readability
+  tr:nth-child(even) {
+    background-color: #fafafa;
+    &:hover {
+      background-color: #f8fafe;
+    }
+  }
+}
+
+.cell-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  min-height: 2rem;
+}
+
+.text-container {
+  flex: 1;
+  max-height: 250px;
+  overflow-y: auto;
+  word-break: break-word;
+  padding-right: 0.5rem;
+  
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 10px;
+  }
+  
+  &::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+  }
+}
+
+.cell-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  color: #4a4a4a;
+}
+
+.copy-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #3498db;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  margin-top: 0.25rem;
+  
+  &:hover {
+    background-color: #f1f8ff;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 6px rgba(52, 152, 219, 0.2);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+  
+  &.copied {
+    color: #27ae60;
+    background-color: rgba(39, 174, 96, 0.1);
+  }
+}
+
+.copy-icon {
+  font-size: 1.25rem;
+}
+
+.no-data {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: #7f8c8d;
+  background-color: #f8f9fa;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  border: 1px dashed #e1e8ed;
+}
