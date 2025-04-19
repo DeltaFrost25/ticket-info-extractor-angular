@@ -1,0 +1,116 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Documentation/Extraction Process" />
+
+# Ticket Extraction Process
+
+This document explains the technical details of how the Ticket Information Extractor processes HTML files and extracts ticket information.
+
+## Overview
+
+The extraction process follows these key steps:
+
+1. **HTML Cleaning**: Remove unnecessary elements and attributes to simplify processing
+2. **Ticket Identification**: Locate ticket IDs following the 300-#### pattern
+3. **Content Extraction**: Find and extract description, details, and resolution fields
+4. **Deduplication**: Remove duplicate entries based on ticket ID
+
+## HTML Cleaning
+
+The application first cleans the input HTML to focus only on relevant content:
+
+- Removes `<style>` and `<script>` tags and their contents
+- Strips unnecessary attributes (keeping only id, data-caid, name, autoidentifier, value)
+- Focuses on 'ext-comp-' elements that contain ticket information
+- Preserves only title elements and textareas that contain important data
+
+This cleaning process significantly reduces the HTML complexity and makes the extraction more reliable.
+
+## Ticket Identification
+
+Tickets are identified primarily by looking for the pattern '300-' followed by digits:
+
+- Searches for this pattern in title elements with 'data-caid' attribute
+- If not found in titles, searches in other text content
+- Extracts the full ticket ID (e.g., '300-1234')
+
+## Content Extraction
+
+For each identified ticket, the application extracts three main pieces of information:
+
+### Description
+- Located in textareas with name, data-caid, id, or autoidentifier containing 'Description'
+- Excludes fields that contain 'Long' in their identifiers
+
+### Details
+- Found in textareas with identifiers containing 'DescriptionLong' or 'Details'
+- Usually contains more extensive information about the ticket
+
+### Resolution
+- Extracted from textareas with identifiers containing 'Resolution'
+- Contains information about how the issue was resolved
+
+## Deduplication
+
+Since the same ticket might appear multiple times in the HTML, the application:
+
+- Creates a set of unique ticket IDs
+- Keeps only the first occurrence of each ticket ID
+- Returns a deduplicated list of tickets
+
+## Technical Implementation
+
+The core of this process is implemented in `TicketDataService` with these main methods:
+
+### cleanHtml()
+```typescript
+private cleanHtml(html: string): string {
+  // Removes scripts, styles
+  // Preserves only specific attributes
+  // Keeps only relevant ext-comp elements
+}
+```
+
+### extractTicketData()
+```typescript
+private extractTicketData(html: string): Ticket[] {
+  // Finds ticket IDs
+  // Extracts textarea content
+  // Maps to description, details, resolution
+  // Removes duplicates
+}
+```
+
+### processHtmlFile()
+```typescript
+processHtmlFile(htmlContent: string): Ticket[] {
+  // Main entry point
+  // Cleans HTML then extracts data
+}
+```
+
+## Edge Cases and Error Handling
+
+The extraction process is designed to handle several edge cases:
+
+- **Missing Fields**: If a description, details, or resolution is not found, it's stored as an empty string
+- **Malformed HTML**: The Cheerio library helps parse even poorly structured HTML
+- **Duplicates**: Only the first occurrence of each ticket ID is kept
+- **Missing Ticket ID**: Elements without a recognizable ticket ID are skipped
+
+## Testing
+
+The extraction process has been tested with various HTML inputs to ensure reliability:
+
+- Clean HTML files
+- Complex HTML with nested elements
+- HTML with multiple instances of the same ticket
+- HTML with missing or partial ticket information
+
+## Performance Considerations
+
+For large HTML files:
+
+- The initial cleaning significantly reduces processing time
+- Using Cheerio for parsing is more efficient than regular expressions for complex HTML
+- Deduplication helps manage large sets of tickets efficiently

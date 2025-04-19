@@ -1,0 +1,131 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Documentation/User Workflow" />
+
+# User Workflow
+
+This guide walks through the typical user workflow for extracting ticket information from HTML files.
+
+## Step 1: Load the Application
+
+When you first load the application, you'll see a clean interface with a file selection button:
+
+```jsx
+// Example component state - initial view
+<TicketExtractorComponent />
+```
+
+## Step 2: Select an HTML File
+
+Click the "Choose File" button to select an HTML file containing ticket information. The application supports any HTML file that contains ticket information in the expected format (containing 300-#### IDs in data elements).
+
+```jsx
+// User selects a file through the file dialog
+// Once selected, the file is automatically processed
+```
+
+## Step 3: View Processing Results
+
+The application will automatically process the HTML file and display the extracted tickets in a table:
+
+```jsx
+// Example of the application with processed data
+<TicketExtractorComponent isLoading={false} tickets={[
+  {
+    ticketId: '300-1234',
+    compId: 'ext-comp-1001',
+    description: 'User login issue',
+    details: 'Detailed problem description...',
+    resolution: 'Fixed authentication flow'
+  },
+  // More tickets...
+]} />
+```
+
+If no tickets are found or if there was an error processing the file, appropriate error messages will be displayed.
+
+## Step 4: Copy Ticket Data
+
+### Option 1: Copy Individual Fields
+
+Click on any cell in the table to copy just that specific piece of information:
+
+```jsx
+// Example showing the copy action on a cell
+<TicketTableComponent 
+  tickets={[...]} 
+  copiedField={{ ticketId: '300-1234', field: 'description' }} 
+/>
+```
+
+When you click a cell, a brief "Copied!" message will appear to confirm the action.
+
+### Option 2: Copy All Data
+
+Click the "Copy All" button to copy all ticket information in a formatted text layout:
+
+```jsx
+// Example showing the copy all action
+<TicketExtractorComponent tickets={[...]} copiedAll={true} />
+```
+
+The copied text will include all tickets with their IDs, descriptions, details, and resolutions in a structured format.
+
+## Step 5: Clear or Process Another File
+
+You can either:
+- Click "Clear" to reset the form and start over
+- Simply select another file to process a different HTML file
+
+```jsx
+// Example showing cleared state
+<TicketExtractorComponent />
+```
+
+## Error Handling
+
+The application handles several error conditions:
+
+### Invalid File Type
+
+If you select a non-HTML file:
+
+```jsx
+// Example showing file type error
+<TicketExtractorComponent 
+  errorMessage="Please select an HTML file." 
+/>
+```
+
+### Processing Error
+
+If there's an error reading or processing the file:
+
+```jsx
+// Example showing processing error
+<TicketExtractorComponent 
+  errorMessage="Error processing file: Unable to parse HTML content" 
+/>
+```
+
+### No Tickets Found
+
+If the file is processed successfully but no tickets are found:
+
+```jsx
+// Example showing no tickets found
+<TicketExtractorComponent 
+  tickets={[]} 
+  errorMessage="No ticket information found in the file." 
+/>
+```
+
+## Clipboard Support
+
+The application implements multiple clipboard methods to ensure compatibility across different browsers and environments:
+
+1. **Modern Clipboard API**: Uses `navigator.clipboard.writeText()` for modern browsers
+2. **Fallback Method**: Uses `document.execCommand('copy')` with a temporary textarea for older browsers
+3. **Visual Feedback**: Provides visual confirmation when content is copied
+
+This ensures the copy functionality works consistently across different environments.

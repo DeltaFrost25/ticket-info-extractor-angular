@@ -1,0 +1,71 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Documentation/Introduction" />
+
+# Ticket Information Extractor
+
+## Overview
+
+The Ticket Information Extractor is an Angular application that helps users extract and organize ticket information from HTML files. It parses HTML content, identifies ticket data based on specific patterns, and presents the extracted information in a structured format.
+
+## Key Features
+
+- **File Upload**: Select HTML files containing ticket information
+- **Automatic Extraction**: Parse HTML and extract ticket IDs, descriptions, details, and resolutions
+- **Tabular Display**: View extracted tickets in a clean table format
+- **Clipboard Support**: Copy individual fields or all ticket data with one click
+- **Error Handling**: Clear feedback for any issues during processing
+
+## Components
+
+The application consists of several key components:
+
+### TicketExtractorComponent
+
+This is the main component responsible for:
+- Handling file selection
+- Processing HTML content
+- Displaying loading states and errors
+- Managing the overall extraction flow
+
+### TicketTableComponent
+
+This component is responsible for:
+- Displaying extracted tickets in a structured table
+- Providing copy functionality for individual fields
+- Showing visual feedback when content is copied
+
+## Core Workflow
+
+1. **Upload HTML File**: User selects an HTML file containing ticket information
+2. **Process Content**: The application cleans the HTML and extracts ticket data
+3. **View Results**: Extracted tickets are displayed in a table
+4. **Copy Data**: User can copy individual fields or all ticket data
+
+## Technical Implementation
+
+The application uses several techniques to process ticket information:
+
+- **HTML Parsing**: Uses Cheerio library to extract data from HTML elements
+- **Pattern Matching**: Identifies ticket IDs using 300-#### pattern
+- **Content Extraction**: Extracts description, details, and resolution fields from textareas
+- **Deduplication**: Removes duplicate tickets based on ticket ID
+- **Clipboard Access**: Provides multiple methods for copying text to handle different browser environments
+
+## Usage Examples
+
+### Basic Usage
+1. Click 'Choose File' to select an HTML file
+2. The file is automatically processed and tickets are displayed
+3. Click on any cell to copy its content
+4. Use 'Copy All' to get all ticket data in text format
+
+### Error Handling
+- If a non-HTML file is selected, an error message is shown
+- If no tickets are found in the file, a notification is displayed
+
+## Best Practices
+
+- Use the 'Clear' button between processing different files
+- For large files, wait for the processing to complete
+- Check for duplicates in the results (they will be automatically removed)

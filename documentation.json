@@ -1,0 +1,1849 @@
+{
+    "pipes": [],
+    "interfaces": [
+        {
+            "name": "Ticket",
+            "id": "interface-Ticket-1e49e6ad7b55e5b0f6754d182d807cbe9f74365efe351c1788745ea00989b0e663b2806011e573b8ba9c99decf05199c73c888d7417d2f34dba869291326bbf1",
+            "file": "src/app/models/ticket.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface Ticket {\n  ticketId: string;\n  compId: string;\n  description: string;\n  details: string;\n  resolution: string;\n}\n",
+            "properties": [
+                {
+                    "name": "compId",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "description",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "details",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "resolution",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "ticketId",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "User",
+            "id": "interface-User-d4821beac0e4a852e513391b7470981c4353fdd95a18628bb68136c8695b489ee15b926e2e5031bc26cf30e1508e0a362c3ee13a06734702b4d15af140e485d5",
+            "file": "src/stories/user.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface User {\n  name: string;\n}\n",
+            "properties": [
+                {
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        }
+    ],
+    "injectables": [
+        {
+            "name": "TicketDataService",
+            "id": "injectable-TicketDataService-87aac81bc09e395b6e0495a481e167cc4fa4f79049b937df1cdcab84218a06417b0ab431ed18a7e73b5b30c89f4f8dbf500b1462487f5968ef2db58e9c9f5904",
+            "file": "src/app/services/ticket-data.service.ts",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "cleanHtml",
+                    "args": [
+                        {
+                            "name": "html",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 30,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nClean the HTML by removing unnecessary elements and attributes\n",
+                    "description": "<p>Clean the HTML by removing unnecessary elements and attributes</p>\n",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 698,
+                                "end": 702,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "html"
+                            },
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "pos": 692,
+                                "end": 697,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": "<p>Raw HTML content</p>\n"
+                        },
+                        {
+                            "tagName": {
+                                "pos": 726,
+                                "end": 733,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "returns"
+                            },
+                            "comment": "<p>Cleaned HTML</p>\n"
+                        }
+                    ]
+                },
+                {
+                    "name": "extractTicketData",
+                    "args": [
+                        {
+                            "name": "html",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Ticket[]",
+                    "typeParameters": [],
+                    "line": 75,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nExtract ticket data from cleaned HTML\n",
+                    "description": "<p>Extract ticket data from cleaned HTML</p>\n",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 2519,
+                                "end": 2523,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "html"
+                            },
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "pos": 2513,
+                                "end": 2518,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": "<p>Cleaned HTML</p>\n"
+                        },
+                        {
+                            "tagName": {
+                                "pos": 2543,
+                                "end": 2550,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "returns"
+                            },
+                            "comment": "<p>Array of extracted ticket data</p>\n"
+                        }
+                    ]
+                },
+                {
+                    "name": "formatTicketDataAsText",
+                    "args": [
+                        {
+                            "name": "tickets",
+                            "type": "Ticket[]",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 172,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nCreate a formatted string containing all ticket data\n",
+                    "description": "<p>Create a formatted string containing all ticket data</p>\n",
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 5866,
+                                "end": 5873,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "tickets"
+                            },
+                            "type": "Ticket[]",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "pos": 5860,
+                                "end": 5865,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": "<p>Array of tickets to format</p>\n"
+                        },
+                        {
+                            "tagName": {
+                                "pos": 5907,
+                                "end": 5914,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "returns"
+                            },
+                            "comment": "<p>Formatted string with all ticket data</p>\n"
+                        }
+                    ]
+                },
+                {
+                    "name": "processHtmlFile",
+                    "args": [
+                        {
+                            "name": "htmlContent",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Ticket[]",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nProcess HTML file and extract ticket information\n",
+                    "description": "<p>Process HTML file and extract ticket information</p>\n",
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 295,
+                                "end": 306,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "htmlContent"
+                            },
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "pos": 289,
+                                "end": 294,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": "<p>The raw HTML content to process</p>\n"
+                        },
+                        {
+                            "tagName": {
+                                "pos": 345,
+                                "end": 352,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "returns"
+                            },
+                            "comment": "<p>Array of extracted ticket data</p>\n"
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import * as cheerio from 'cheerio';\nimport { Injectable } from '@angular/core';\nimport { Ticket } from '../models/ticket.model';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class TicketDataService {\n\n  constructor() { }\n\n  /**\n   * Process HTML file and extract ticket information\n   * @param htmlContent The raw HTML content to process\n   * @returns Array of extracted ticket data\n   */\n  processHtmlFile(htmlContent: string): Ticket[] {\n    // First clean the HTML\n    const cleanedHtml = this.cleanHtml(htmlContent);\n    \n    // Then extract ticket data\n    return this.extractTicketData(cleanedHtml);\n  }\n\n  /**\n   * Clean the HTML by removing unnecessary elements and attributes\n   * @param html Raw HTML content\n   * @returns Cleaned HTML\n   */\n  private cleanHtml(html: string): string {\n    // Basic string replacements for major unwanted sections\n    let cleanedHTML = html.replace(/<style\\b[^>]*>[\\s\\S]*?<\\/style>/gi, '');\n    cleanedHTML = cleanedHTML.replace(/<script\\b[^>]*>[\\s\\S]*?<\\/script>/gi, '');\n    cleanedHTML = cleanedHTML.replace(/<[^>]*\\sid\\s*=\\s*[\"']ca-service-desk-ticket-center-page-primarytab[\"'][^>]*>([\\s\\S]*?)<\\/[^>]*>/gi, '');\n    \n    // Load into Cheerio for more targeted cleaning\n    const $ = cheerio.load(cleanedHTML);\n    \n    // Define attributes to keep\n    const allowedAttributes = new Set(['id', 'data-caid', 'name', 'autoidentifier', 'value']);\n    \n    // Remove all attributes except the allowed ones from all elements\n    $('*').each(function() {\n      const element = $(this);\n      const attributes = { ...element.attr() }; // Clone attributes object\n      \n      for (const attrName in attributes) {\n        if (!allowedAttributes.has(attrName)) {\n          element.removeAttr(attrName);\n        }\n      }\n    });\n    \n    // Only keep ext-comp elements with relevant extraction fields\n    const container = $('<div></div>');\n    $('div[id^=\"ext-comp-\"]').each(function() {\n      const compEl = $(this);\n      // Include only if it contains a title or textarea\n      if (!compEl.find('[data-caid=\"title\"], textarea').length) return;\n      const newComp = $('<div></div>').attr('id', compEl.attr('id'));\n      // Append title field(s)\n      compEl.find('[data-caid=\"title\"]').clone().appendTo(newComp);\n      // Append all textareas (Description, Details, Resolution)\n      compEl.find('textarea').clone().appendTo(newComp);\n      container.append(newComp);\n    });\n    return container.html() || '';\n  }\n\n  /**\n   * Extract ticket data from cleaned HTML\n   * @param html Cleaned HTML\n   * @returns Array of extracted ticket data\n   */\n  private extractTicketData(html: string): Ticket[] {\n    const $ = cheerio.load(html);\n    const tickets: Ticket[] = [];\n\n    // Find each ext-comp-* element\n    $('[id^=\"ext-comp-\"]').each(function() {\n      const compElement = $(this);\n      const compId = compElement.attr('id') || '';\n      \n      // Try to find ticket ID within this ext-comp element\n      let ticketId: string | null = null;\n      \n      // Look for title element with ticket ID pattern\n      compElement.find('[data-caid=\"title\"]').each(function() {\n        const titleText = $(this).text().trim();\n        const match = titleText.match(/300-\\d+/);\n        if (match) {\n          ticketId = match[0];\n        }\n      });\n      \n      // If no title element, look for any text that contains a ticket ID\n      if (!ticketId) {\n        compElement.find('*:contains(\"300-\")').each(function() {\n          const text = $(this).text().trim();\n          const match = text.match(/300-\\d+/);\n          if (match && !$(this).children().length) {\n            ticketId = match[0];\n            return false; // break out of the loop\n          }\n          return true; // Continue the loop\n        });\n      }\n      \n      // If we found a ticket ID, extract the data\n      if (ticketId) {\n        const ticketData: Ticket = {\n          ticketId: ticketId,\n          compId,\n          description: '',\n          details: '',\n          resolution: ''\n        };\n        \n        // Find description fields\n        compElement.find('textarea').each(function() {\n          const textarea = $(this);\n          const textareaContent = textarea.text() || textarea.attr('value') || '';\n          if (!textareaContent.trim()) return;\n          \n          const name = textarea.attr('name') || '';\n          const dataCaid = textarea.attr('data-caid') || '';\n          const id = textarea.attr('id') || '';\n          const autoId = textarea.attr('autoidentifier') || '';\n          \n          // Check what type of content this is\n          if (name.includes('Description') || dataCaid.includes('Description') || \n              id.includes('Description') || autoId.includes('Description')) {\n            if (!dataCaid.includes('Long') && !name.includes('Long')) {\n              ticketData.description = textareaContent;\n            }\n          }\n          \n          if (name.includes('DescriptionLong') || dataCaid.includes('DescriptionLong') || \n              id.includes('DescriptionLong') || autoId.includes('Details')) {\n            ticketData.details = textareaContent;\n          }\n          \n          if (name.includes('Resolution') || dataCaid.includes('Resolution') || \n              id.includes('Resolution') || autoId.includes('Resolution')) {\n            ticketData.resolution = textareaContent;\n          }\n        });\n        \n        // Add to our list of tickets\n        tickets.push(ticketData);\n      }\n    });\n\n    // Remove duplicates based on ticket ID\n    const uniqueTickets: Ticket[] = [];\n    const seenIds = new Set<string>();\n    tickets.forEach(ticket => {\n      if (!seenIds.has(ticket.ticketId)) {\n        seenIds.add(ticket.ticketId);\n        uniqueTickets.push(ticket);\n      }\n    });\n\n    return uniqueTickets;\n  }\n\n  /**\n   * Create a formatted string containing all ticket data\n   * @param tickets Array of tickets to format\n   * @returns Formatted string with all ticket data\n   */\n  formatTicketDataAsText(tickets: Ticket[]): string {\n    if (tickets.length === 0) {\n      return 'No tickets found';\n    }\n\n    let tableText = 'Ticket Information Table\\n';\n    tableText += '==============================================\\n\\n';\n\n    tickets.forEach((ticket, index) => {\n      tableText += `Ticket #${index + 1}: ${ticket.ticketId}\\n`;\n      tableText += '-'.repeat(60) + '\\n';\n      \n      tableText += 'Description:\\n';\n      tableText += '-'.repeat(12) + '\\n';\n      tableText += `${ticket.description.trim() || 'Not provided'}\\n\\n`;\n      \n      tableText += 'Details:\\n';\n      tableText += '-'.repeat(8) + '\\n';\n      tableText += `${ticket.details.trim() || 'Not provided'}\\n\\n`;\n      \n      tableText += 'Resolution:\\n';\n      tableText += '-'.repeat(11) + '\\n';\n      tableText += `${ticket.resolution.trim() || 'Not provided'}\\n\\n`;\n      \n      tableText += '='.repeat(60) + '\\n\\n';\n    });\n\n    return tableText;\n  }\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "extends": [],
+            "type": "injectable"
+        }
+    ],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-d366d54700f40c9ffe7abb7039efa478c2a74498cf1c3e8bbc5ecdb8b330770703a4057ad57e4ca6b11079fb6b98c503005ccf4ef4ffa0fda3add542cbfd517e",
+            "file": "src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [
+                "./app.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "'Ticket Information Extractor'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "RouterOutlet"
+                },
+                {
+                    "name": "TicketExtractorComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { RouterOutlet } from '@angular/router';\nimport { TicketExtractorComponent } from './components/ticket-extractor/ticket-extractor.component';\n\n@Component({\n  selector: 'app-root',\n  standalone: true,\n  imports: [RouterOutlet, TicketExtractorComponent],\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss']\n})\nexport class AppComponent {\n  title = 'Ticket Information Extractor';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./app.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<main>\n  <app-ticket-extractor></app-ticket-extractor>\n</main>\n\n<router-outlet />\n"
+        },
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-d7bf0323e6da130e2609e2af0117b4a8d7cd874132206af50bf43dfc37044485fe50f2867ea76525730dd195b9b95a43802a12dadc6ad5cd7bf2faa07f19f0da",
+            "file": "src/stories/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-button",
+            "styleUrls": [
+                "./button.css"
+            ],
+            "styles": [],
+            "template": " <button  type=\"button\"\n  (click)=\"onClick.emit($event)\"\n  [ngClass]=\"classes\"\n  [ngStyle]=\"{ 'background-color': backgroundColor }\"\n>\n  {{ label }}\n</button>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nWhat background color to use",
+                    "description": "<p>What background color to use</p>\n",
+                    "line": 25,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 760,
+                            "end": 773,
+                            "kind": 327,
+                            "id": 0,
+                            "flags": 16842752,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "tagName": {
+                                "pos": 761,
+                                "end": 769,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "required"
+                            },
+                            "comment": ""
+                        }
+                    ],
+                    "rawdescription": "\n\nButton contents\n\n",
+                    "description": "<p>Button contents</p>\n",
+                    "line": 37,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "primary",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nIs this the principal call to action on the page?",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 21,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nHow large should the button be?",
+                    "description": "<p>How large should the button be?</p>\n",
+                    "line": 29,
+                    "type": "\"small\" | \"medium\" | \"large\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nOptional click handler",
+                    "description": "<p>Optional click handler</p>\n",
+                    "line": 41,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  standalone: true,\n  imports: [CommonModule],\n  template: ` <button\n  type=\"button\"\n  (click)=\"onClick.emit($event)\"\n  [ngClass]=\"classes\"\n  [ngStyle]=\"{ 'background-color': backgroundColor }\"\n>\n  {{ label }}\n</button>`,\n  styleUrls: ['./button.css'],\n})\nexport class ButtonComponent {\n  /** Is this the principal call to action on the page? */\n  @Input()\n  primary = false;\n\n  /** What background color to use */\n  @Input()\n  backgroundColor?: string;\n\n  /** How large should the button be? */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /** Optional click handler */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".storybook-button {\n  display: inline-block;\n  cursor: pointer;\n  border: 0;\n  border-radius: 3em;\n  font-weight: 700;\n  line-height: 1;\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}\n.storybook-button--primary {\n  background-color: #555ab9;\n  color: white;\n}\n.storybook-button--secondary {\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n  background-color: transparent;\n  color: #333;\n}\n.storybook-button--small {\n  padding: 10px 16px;\n  font-size: 12px;\n}\n.storybook-button--medium {\n  padding: 11px 20px;\n  font-size: 14px;\n}\n.storybook-button--large {\n  padding: 12px 24px;\n  font-size: 16px;\n}\n",
+                    "styleUrl": "./button.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 43
+                    }
+                }
+            }
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-48b9abe37706bc42f20cfa97ed9f943678344ea7d254c0c82183c657750c2191b43486fe730c778627b2ea6aa0e2f33a7abcf3ce08b68ad18b062ad99ea97acb",
+            "file": "src/stories/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-header",
+            "styleUrls": [
+                "./header.css"
+            ],
+            "styles": [],
+            "template": "<header>  <div class=\"storybook-header\">\n    <div>\n      <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n        <g fill=\"none\" fillRule=\"evenodd\">\n          <path\n            d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n            fill=\"#FFF\"\n          />\n          <path\n            d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n            fill=\"#555AB9\"\n          />\n          <path d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\" fill=\"#91BAF8\" />\n        </g>\n      </svg>\n      <h1>Acme</h1>\n    </div>\n    <div>\n      <div *ngIf=\"user\">\n        <span class=\"welcome\">\n          Welcome, <b>{{ user.name }}</b\n          >!\n        </span>\n        <storybook-button\n          *ngIf=\"user\"\n          size=\"small\"\n          (onClick)=\"onLogout.emit($event)\"\n          label=\"Log out\"\n        ></storybook-button>\n      </div>\n      <div *ngIf=\"!user\">\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          class=\"margin-left\"\n          (onClick)=\"onLogin.emit($event)\"\n          label=\"Log in\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          [primary]=\"true\"\n          class=\"margin-left\"\n          (onClick)=\"onCreateAccount.emit($event)\"\n          label=\"Sign up\"\n        ></storybook-button>\n      </div>\n    </div>\n  </div>\n</header>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "user",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 66,
+                    "type": "User | null",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onCreateAccount",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 75,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogin",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 69,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogout",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 72,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "ButtonComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { ButtonComponent } from './button.component';\nimport type { User } from './user';\n\n@Component({\n  selector: 'storybook-header',\n  standalone: true,\n  imports: [CommonModule, ButtonComponent],\n  template: `<header>\n  <div class=\"storybook-header\">\n    <div>\n      <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n        <g fill=\"none\" fillRule=\"evenodd\">\n          <path\n            d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n            fill=\"#FFF\"\n          />\n          <path\n            d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n            fill=\"#555AB9\"\n          />\n          <path d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\" fill=\"#91BAF8\" />\n        </g>\n      </svg>\n      <h1>Acme</h1>\n    </div>\n    <div>\n      <div *ngIf=\"user\">\n        <span class=\"welcome\">\n          Welcome, <b>{{ user.name }}</b\n          >!\n        </span>\n        <storybook-button\n          *ngIf=\"user\"\n          size=\"small\"\n          (onClick)=\"onLogout.emit($event)\"\n          label=\"Log out\"\n        ></storybook-button>\n      </div>\n      <div *ngIf=\"!user\">\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          class=\"margin-left\"\n          (onClick)=\"onLogin.emit($event)\"\n          label=\"Log in\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          [primary]=\"true\"\n          class=\"margin-left\"\n          (onClick)=\"onCreateAccount.emit($event)\"\n          label=\"Sign up\"\n        ></storybook-button>\n      </div>\n    </div>\n  </div>\n</header>`,\n  styleUrls: ['./header.css'],\n})\nexport class HeaderComponent {\n  @Input()\n  user: User | null = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".storybook-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  padding: 15px 20px;\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}\n\n.storybook-header svg {\n  display: inline-block;\n  vertical-align: top;\n}\n\n.storybook-header h1 {\n  display: inline-block;\n  vertical-align: top;\n  margin: 6px 0 6px 10px;\n  font-weight: 700;\n  font-size: 20px;\n  line-height: 1;\n}\n\n.storybook-header button + button {\n  margin-left: 10px;\n}\n\n.storybook-header .welcome {\n  margin-right: 10px;\n  color: #333;\n  font-size: 14px;\n}\n",
+                    "styleUrl": "./header.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "PageComponent",
+            "id": "component-PageComponent-21dd6eb370b4983b5c21c84d40e6f54d266a9d9af9889e6e76b35c43058bd53b3e451bad089d5adf4bea46647ba10265a2fa8cb15630398e75636307d4817fc6",
+            "file": "src/stories/page.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-page",
+            "styleUrls": [
+                "./page.css"
+            ],
+            "styles": [],
+            "template": "<article>  <storybook-header\n    [user]=\"user\"\n    (onLogout)=\"doLogout()\"\n    (onLogin)=\"doLogin()\"\n    (onCreateAccount)=\"doCreateAccount()\"\n  ></storybook-header>\n  <section class=\"storybook-page\">\n    <h2>Pages in Storybook</h2>\n    <p>\n      We recommend building UIs with a\n      <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n        <strong>component-driven</strong>\n      </a>\n      process starting with atomic components and ending with pages.\n    </p>\n    <p>\n      Render pages with mock data. This makes it easy to build and review page states without\n      needing to navigate to them in your app. Here are some handy patterns for managing page data\n      in Storybook:\n    </p>\n    <ul>\n      <li>\n        Use a higher-level connected component. Storybook helps you compose such data from the\n        \"args\" of child component stories\n      </li>\n      <li>\n        Assemble data in the page component from your services. You can mock these services out\n        using Storybook.\n      </li>\n    </ul>\n    <p>\n      Get a guided tutorial on component-driven development at\n      <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n        Storybook tutorials\n      </a>\n      . Read more in the\n      <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n      .\n    </p>\n    <div class=\"tip-wrapper\">\n      <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n      <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n        <g fill=\"none\" fillRule=\"evenodd\">\n          <path\n            d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n            id=\"a\"\n            fill=\"#999\"\n          />\n        </g>\n      </svg>\n      Viewports addon in the toolbar\n    </div>\n  </section>\n</article>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "user",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "User | null",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 69
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "doCreateAccount",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 79,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "doLogin",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 75,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "doLogout",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 71,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "HeaderComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { HeaderComponent } from './header.component';\nimport type { User } from './user';\n\n@Component({\n  selector: 'storybook-page',\n  standalone: true,\n  imports: [CommonModule, HeaderComponent],\n  template: `<article>\n  <storybook-header\n    [user]=\"user\"\n    (onLogout)=\"doLogout()\"\n    (onLogin)=\"doLogin()\"\n    (onCreateAccount)=\"doCreateAccount()\"\n  ></storybook-header>\n  <section class=\"storybook-page\">\n    <h2>Pages in Storybook</h2>\n    <p>\n      We recommend building UIs with a\n      <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n        <strong>component-driven</strong>\n      </a>\n      process starting with atomic components and ending with pages.\n    </p>\n    <p>\n      Render pages with mock data. This makes it easy to build and review page states without\n      needing to navigate to them in your app. Here are some handy patterns for managing page data\n      in Storybook:\n    </p>\n    <ul>\n      <li>\n        Use a higher-level connected component. Storybook helps you compose such data from the\n        \"args\" of child component stories\n      </li>\n      <li>\n        Assemble data in the page component from your services. You can mock these services out\n        using Storybook.\n      </li>\n    </ul>\n    <p>\n      Get a guided tutorial on component-driven development at\n      <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n        Storybook tutorials\n      </a>\n      . Read more in the\n      <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n      .\n    </p>\n    <div class=\"tip-wrapper\">\n      <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n      <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n        <g fill=\"none\" fillRule=\"evenodd\">\n          <path\n            d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n            id=\"a\"\n            fill=\"#999\"\n          />\n        </g>\n      </svg>\n      Viewports addon in the toolbar\n    </div>\n  </section>\n</article>`,\n  styleUrls: ['./page.css'],\n})\nexport class PageComponent {\n  user: User | null = null;\n\n  doLogout() {\n    this.user = null;\n  }\n\n  doLogin() {\n    this.user = { name: 'Jane Doe' };\n  }\n\n  doCreateAccount() {\n    this.user = { name: 'Jane Doe' };\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".storybook-page {\n  margin: 0 auto;\n  padding: 48px 20px;\n  max-width: 600px;\n  color: #333;\n  font-size: 14px;\n  line-height: 24px;\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}\n\n.storybook-page h2 {\n  display: inline-block;\n  vertical-align: top;\n  margin: 0 0 4px;\n  font-weight: 700;\n  font-size: 32px;\n  line-height: 1;\n}\n\n.storybook-page p {\n  margin: 1em 0;\n}\n\n.storybook-page a {\n  color: inherit;\n}\n\n.storybook-page ul {\n  margin: 1em 0;\n  padding-left: 30px;\n}\n\n.storybook-page li {\n  margin-bottom: 8px;\n}\n\n.storybook-page .tip {\n  display: inline-block;\n  vertical-align: top;\n  margin-right: 10px;\n  border-radius: 1em;\n  background: #e7fdd8;\n  padding: 4px 12px;\n  color: #357a14;\n  font-weight: 700;\n  font-size: 11px;\n  line-height: 12px;\n}\n\n.storybook-page .tip-wrapper {\n  margin-top: 40px;\n  margin-bottom: 40px;\n  font-size: 13px;\n  line-height: 20px;\n}\n\n.storybook-page .tip-wrapper svg {\n  display: inline-block;\n  vertical-align: top;\n  margin-top: 3px;\n  margin-right: 4px;\n  width: 12px;\n  height: 12px;\n}\n\n.storybook-page .tip-wrapper svg path {\n  fill: #1ea7fd;\n}\n",
+                    "styleUrl": "./page.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "TicketExtractorComponent",
+            "id": "component-TicketExtractorComponent-131bb1153602f72caf6b5973dd7aa24e5fb826063a1fe0e23409fd8ae4457eb964043b442e4a76be0de5c78aa977439a5301211b353054163551a69124c2f6a1",
+            "file": "src/app/components/ticket-extractor/ticket-extractor.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-ticket-extractor",
+            "styleUrls": [
+                "./ticket-extractor.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./ticket-extractor.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "copiedAll",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
+                },
+                {
+                    "name": "errorMessage",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 17
+                },
+                {
+                    "name": "fileName",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 19
+                },
+                {
+                    "name": "isLoading",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "selectedFile",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "File | null",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
+                },
+                {
+                    "name": "tickets",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Ticket[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "clearSelection",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 99,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nClear the current file selection and results\n",
+                    "description": "<p>Clear the current file selection and results</p>\n"
+                },
+                {
+                    "name": "copyAll",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 171,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nCopy all ticket data to clipboard\n",
+                    "description": "<p>Copy all ticket data to clipboard</p>\n"
+                },
+                {
+                    "name": "copyTextFallback",
+                    "args": [
+                        {
+                            "name": "text",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 138,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nFallback method for copying text using a temporary textarea element\n",
+                    "description": "<p>Fallback method for copying text using a temporary textarea element</p>\n",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 3637,
+                                "end": 3641,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "text"
+                            },
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "pos": 3631,
+                                "end": 3636,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": "<p>Text to copy</p>\n"
+                        }
+                    ]
+                },
+                {
+                    "name": "copyTextToClipboard",
+                    "args": [
+                        {
+                            "name": "text",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 117,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nCopy text to clipboard with fallback\n",
+                    "description": "<p>Copy text to clipboard with fallback</p>\n",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 3025,
+                                "end": 3029,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "text"
+                            },
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "pos": 3019,
+                                "end": 3024,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": "<p>Text to copy</p>\n"
+                        }
+                    ]
+                },
+                {
+                    "name": "getAllTicketDataAsText",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 109,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nGet all ticket data as formatted text\n",
+                    "description": "<p>Get all ticket data as formatted text</p>\n"
+                },
+                {
+                    "name": "onFileSelected",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 28,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nHandle file selection event\n",
+                    "description": "<p>Handle file selection event</p>\n",
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 817,
+                                "end": 822,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "event"
+                            },
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "pos": 811,
+                                "end": 816,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": "<p>File input change event</p>\n"
+                        }
+                    ]
+                },
+                {
+                    "name": "processFile",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 56,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nProcess the selected HTML file\n",
+                    "description": "<p>Process the selected HTML file</p>\n"
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "TicketTableComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { TicketDataService } from '../../services/ticket-data.service';\nimport { Ticket } from '../../models/ticket.model';\nimport { TicketTableComponent } from '../ticket-table/ticket-table.component';\n\n@Component({\n  selector: 'app-ticket-extractor',\n  templateUrl: './ticket-extractor.component.html',\n  styleUrls: ['./ticket-extractor.component.scss'],\n  imports: [CommonModule, TicketTableComponent],\n  standalone: true\n})\nexport class TicketExtractorComponent {\n  isLoading = false;\n  tickets: Ticket[] = [];\n  errorMessage = '';\n  selectedFile: File | null = null;\n  fileName = '';\n  copiedAll = false;\n\n  constructor(private ticketDataService: TicketDataService) {}\n\n  /**\n   * Handle file selection event\n   * @param event File input change event\n   */\n  onFileSelected(event: Event): void {\n    const input = event.target as HTMLInputElement;\n    if (!input.files?.length) {\n      return;\n    }\n\n    const file = input.files[0];\n    if (!file) {\n      return;\n    }\n\n    // Verify file type\n    if (!file.name.toLowerCase().endsWith('.html')) {\n      this.errorMessage = 'Please select an HTML file.';\n      return;\n    }\n\n    this.selectedFile = file;\n    this.fileName = file.name;\n    this.errorMessage = '';\n    \n    // Automatically process the file when selected\n    this.processFile();\n  }\n\n  /**\n   * Process the selected HTML file\n   */\n  processFile(): void {\n    if (!this.selectedFile) {\n      this.errorMessage = 'Please select an HTML file first.';\n      return;\n    }\n\n    this.isLoading = true;\n    this.errorMessage = '';\n    \n    const reader = new FileReader();\n    \n    reader.onload = (e: ProgressEvent<FileReader>) => {\n      try {\n        const htmlContent = e.target?.result as string;\n        if (!htmlContent) {\n          throw new Error('Failed to read file content');\n        }\n        \n        // Process the HTML content\n        this.tickets = this.ticketDataService.processHtmlFile(htmlContent);\n        \n        if (this.tickets.length === 0) {\n          this.errorMessage = 'No ticket information found in the file.';\n        }\n      } catch (error) {\n        console.error('Error processing file:', error);\n        this.errorMessage = `Error processing file: ${error instanceof Error ? error.message : 'Unknown error'}`;\n      } finally {\n        this.isLoading = false;\n      }\n    };\n    \n    reader.onerror = () => {\n      this.errorMessage = 'Error reading the file.';\n      this.isLoading = false;\n    };\n    \n    reader.readAsText(this.selectedFile);\n  }\n\n  /**\n   * Clear the current file selection and results\n   */\n  clearSelection(): void {\n    this.selectedFile = null;\n    this.fileName = '';\n    this.tickets = [];\n    this.errorMessage = '';\n  }\n\n  /**\n   * Get all ticket data as formatted text\n   */\n  getAllTicketDataAsText(): string {\n    return this.ticketDataService.formatTicketDataAsText(this.tickets);\n  }\n\n  /**\n   * Copy text to clipboard with fallback\n   * @param text Text to copy\n   */\n  private copyTextToClipboard(text: string): void {\n    try {\n      // Try using the modern Clipboard API first\n      navigator.clipboard.writeText(text)\n        .then(() => {\n          console.log('Text copied to clipboard');\n        })\n        .catch(err => {\n          // If Clipboard API fails, try the fallback method\n          this.copyTextFallback(text);\n        });\n    } catch (err) {\n      // If Clipboard API is not available, use fallback\n      this.copyTextFallback(text);\n    }\n  }\n\n  /**\n   * Fallback method for copying text using a temporary textarea element\n   * @param text Text to copy\n   */\n  private copyTextFallback(text: string): void {\n    try {\n      // Create a temporary textarea element\n      const textArea = document.createElement('textarea');\n      textArea.value = text;\n      \n      // Make the textarea out of viewport\n      textArea.style.position = 'fixed';\n      textArea.style.left = '-999999px';\n      textArea.style.top = '-999999px';\n      document.body.appendChild(textArea);\n      \n      // Select and copy the text\n      textArea.focus();\n      textArea.select();\n      const successful = document.execCommand('copy');\n      \n      // Remove the temporary element\n      document.body.removeChild(textArea);\n      \n      if (successful) {\n        console.log('Text copied using fallback method');\n      } else {\n        console.error('Fallback copy method failed');\n      }\n    } catch (err) {\n      console.error('All clipboard copy methods failed:', err);\n    }\n  }\n\n  /**\n   * Copy all ticket data to clipboard\n   */\n  copyAll(): void {\n    if (this.tickets.length === 0) return;\n    \n    const textToCopy = this.getAllTicketDataAsText();\n    this.copyTextToClipboard(textToCopy);\n    \n    // Show copy confirmation\n    this.copiedAll = true;\n    \n    // Reset copy confirmation after 2 seconds\n    setTimeout(() => {\n      this.copiedAll = false;\n    }, 2000);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".container {\n  max-width: 1200px;\n  margin: 0 auto;\n  padding: 2rem;\n  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n}\n\n.app-header {\n  margin-bottom: 2.5rem;\n  text-align: center;\n  border-bottom: 1px solid #e1e8ed;\n  padding-bottom: 1.5rem;\n}\n\nh1 {\n  color: #2c3e50;\n  margin-bottom: 0.75rem;\n  font-weight: 600;\n  font-size: 2.25rem;\n}\n\np {\n  color: #7f8c8d;\n  font-size: 1.1rem;\n  margin-bottom: 0.5rem;\n}\n\n.file-upload-container {\n  display: flex;\n  flex-direction: column;\n  margin-bottom: 2.5rem;\n  background-color: #f8f9fa;\n  padding: 1.5rem;\n  border-radius: 0.5rem;\n  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);\n}\n\n.upload-section {\n  display: flex;\n  flex-direction: column;\n  gap: 1.25rem;\n  width: 100%;\n\n  @media (min-width: 768px) {\n    flex-direction: row;\n    align-items: center;\n    justify-content: space-between;\n  }\n}\n\n.file-upload {\n  flex: 1;\n\n  @media (min-width: 768px) {\n    margin-right: 1.5rem;\n    max-width: calc(100% - 250px);\n  }\n}\n\n.file-upload {\n  flex: 1;\n  position: relative;\n\n  input[type=\"file\"] {\n    position: absolute;\n    width: 0.1px;\n    height: 0.1px;\n    opacity: 0;\n    overflow: hidden;\n    z-index: -1;\n  }\n\n  .file-label {\n    display: flex;\n    align-items: center;\n    gap: 0.75rem;\n    padding: 1rem 1.25rem;\n    background-color: white;\n    border: 2px dashed #ced4da;\n    border-radius: 0.375rem;\n    cursor: pointer;\n    transition: all 0.3s ease;\n    width: 100%;\n    font-size: 1rem;\n    color: #495057;\n\n    &:hover {\n      background-color: #f1f7fe;\n      border-color: #3498db;\n    }\n\n    .upload-icon {\n      font-size: 1.5rem;\n      margin-right: 0.5rem;\n      color: #3498db;\n    }\n  }\n}\n\n.action-buttons {\n  margin-left: 1rem;\n  display: flex;\n  gap: 1rem;\n\n  button {\n    padding: 0.75rem 1.5rem;\n    border: none;\n    border-radius: 0.375rem;\n    font-weight: 500;\n    cursor: pointer;\n    transition: all 0.3s ease;\n    font-size: 1rem;\n  }\n\n  .process-btn {\n    background-color: #3498db;\n    color: white;\n\n    &:hover:not(:disabled) {\n      background-color: #2980b9;\n      transform: translateY(-2px);\n      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n    }\n\n    &:disabled {\n      background-color: #bdc3c7;\n      cursor: not-allowed;\n    }\n  }\n\n  .clear-btn {\n    background-color: #e74c3c;\n    color: white;\n\n    &:hover:not(:disabled) {\n      background-color: #c0392b;\n      transform: translateY(-2px);\n      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n    }\n\n    &:disabled {\n      background-color: #bdc3c7;\n      cursor: not-allowed;\n    }\n  }\n}\n\n.error-message {\n  padding: 1rem;\n  background-color: #fff3f3;\n  color: #e74c3c;\n  border-left: 4px solid #e74c3c;\n  margin-bottom: 2rem;\n  border-radius: 0.375rem;\n  font-weight: 500;\n  box-shadow: 0 2px 8px rgba(231, 76, 60, 0.1);\n}\n\n.loading-indicator {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 2rem;\n  margin-bottom: 2rem;\n\n  .spinner {\n    width: 40px;\n    height: 40px;\n    margin-bottom: 1rem;\n    border: 4px solid #f3f3f3;\n    border-top: 4px solid #3498db;\n    border-radius: 50%;\n    animation: spin 1s linear infinite;\n  }\n\n  span {\n    color: #7f8c8d;\n    font-size: 1.1rem;\n  }\n\n  @keyframes spin {\n    0% { transform: rotate(0deg); }\n    100% { transform: rotate(360deg); }\n  }\n}\n\n.results-container {\n  margin-top: 2.5rem;\n  background-color: white;\n  border-radius: 0.5rem;\n  padding: 1.5rem;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n}\n\n.results-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 1.5rem;\n  padding-bottom: 1rem;\n  border-bottom: 1px solid #e1e8ed;\n\n  h2 {\n    color: #2c3e50;\n    margin: 0;\n    font-weight: 600;\n    font-size: 1.5rem;\n  }\n\n  .copy-all-btn {\n    display: flex;\n    align-items: center;\n    gap: 0.75rem;\n    padding: 0.75rem 1.5rem;\n    background-color: #27ae60;\n    color: white;\n    border: none;\n    border-radius: 0.375rem;\n    font-weight: 500;\n    cursor: pointer;\n    transition: all 0.3s ease;\n\n    &:hover {\n      background-color: #219653;\n      transform: translateY(-2px);\n      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n    }\n\n    .copy-icon {\n      font-size: 1.25rem;\n    }\n\n    &.copied {\n      background-color: #2ecc71;\n    }\n  }\n}",
+                    "styleUrl": "./ticket-extractor.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "ticketDataService",
+                        "type": "TicketDataService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 20,
+                "jsdoctags": [
+                    {
+                        "name": "ticketDataService",
+                        "type": "TicketDataService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "templateData": "<div class=\"container\">\r\n  <header class=\"app-header\">\r\n    <h1>Ticket Information Extractor</h1>\r\n    <p>Upload an HTML file to extract ticket information</p>\r\n  </header>\r\n\r\n  <div class=\"file-upload-container\">\r\n    <div class=\"upload-section\">\r\n      <div class=\"file-upload\">\r\n        <input type=\"file\" id=\"fileInput\" (change)=\"onFileSelected($event)\" accept=\".html\" [disabled]=\"isLoading\">\r\n        <label for=\"fileInput\" class=\"file-label\">\r\n          <i class=\"upload-icon\">📁</i>\r\n          <span *ngIf=\"!fileName\">Choose an HTML file</span>\r\n          <span *ngIf=\"fileName\">{{ fileName }}</span>\r\n        </label>\r\n      </div>\r\n\r\n      <div class=\"action-buttons\">\r\n        <!-- Process button is only shown if automatic processing fails or needs re-processing -->\r\n        <button (click)=\"processFile()\" [disabled]=\"!selectedFile || isLoading\" class=\"process-btn\">\r\n          <span *ngIf=\"!isLoading\">Process File</span>\r\n          <span *ngIf=\"isLoading\">Processing...</span>\r\n        </button>\r\n        <button (click)=\"clearSelection()\" [disabled]=\"!selectedFile || isLoading\" class=\"clear-btn\">Clear</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <div *ngIf=\"errorMessage\" class=\"error-message\">\r\n    {{ errorMessage }}\r\n  </div>\r\n\r\n  <div *ngIf=\"isLoading\" class=\"loading-indicator\">\r\n    <div class=\"spinner\"></div>\r\n    <span>Processing ticket data...</span>\r\n  </div>\r\n\r\n  <div *ngIf=\"tickets.length > 0\" class=\"results-container\">\r\n    <div class=\"results-header\">\r\n      <h2>Extracted Ticket Information</h2>\r\n      <button (click)=\"copyAll()\" class=\"copy-all-btn\" [class.copied]=\"copiedAll\">\r\n        <i class=\"copy-icon\">{{ copiedAll ? '✓' : '📋' }}</i> {{ copiedAll ? 'Copied!' : 'Copy All' }}\r\n      </button>\r\n    </div>\r\n\r\n    <app-ticket-table [tickets]=\"tickets\"></app-ticket-table>\r\n  </div>\r\n</div>\r\n"
+        },
+        {
+            "name": "TicketTableComponent",
+            "id": "component-TicketTableComponent-f7a048c0580a9d434c9f2132fd91cb6b3d0cdb5986657a7f20c4be37f52f09c4a9ad9b62a4a8b6a39ec7c9c4f9c1b3775c465797eebf7cff09f3df23e11c5eee",
+            "file": "src/app/components/ticket-table/ticket-table.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-ticket-table",
+            "styleUrls": [
+                "./ticket-table.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./ticket-table.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "tickets",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "Ticket[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "copiedField",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "literal type | null",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "copyField",
+                    "args": [
+                        {
+                            "name": "ticket",
+                            "type": "Ticket",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "field",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 22,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nCopy a single field value to clipboard\n",
+                    "description": "<p>Copy a single field value to clipboard</p>\n",
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 558,
+                                "end": 564,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "ticket"
+                            },
+                            "type": "Ticket",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "pos": 552,
+                                "end": 557,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": "<p>The ticket containing the field</p>\n"
+                        },
+                        {
+                            "name": {
+                                "pos": 610,
+                                "end": 615,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "field"
+                            },
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "pos": 604,
+                                "end": 609,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": "<p>The field name to copy</p>\n"
+                        },
+                        {
+                            "name": {
+                                "pos": 652,
+                                "end": 657,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "value"
+                            },
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "pos": 646,
+                                "end": 651,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": "<p>The value to copy</p>\n"
+                        }
+                    ]
+                },
+                {
+                    "name": "copyTextFallback",
+                    "args": [
+                        {
+                            "name": "text",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 63,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nFallback method for copying text using a temporary textarea element\n",
+                    "description": "<p>Fallback method for copying text using a temporary textarea element</p>\n",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 1840,
+                                "end": 1844,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "text"
+                            },
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "pos": 1834,
+                                "end": 1839,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": "<p>Text to copy</p>\n"
+                        }
+                    ]
+                },
+                {
+                    "name": "copyTextToClipboard",
+                    "args": [
+                        {
+                            "name": "text",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 42,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nCopy text to clipboard with fallback\n",
+                    "description": "<p>Copy text to clipboard with fallback</p>\n",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 1207,
+                                "end": 1211,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "text"
+                            },
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "pos": 1201,
+                                "end": 1206,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": "<p>Text to copy</p>\n"
+                        }
+                    ]
+                },
+                {
+                    "name": "isCopied",
+                    "args": [
+                        {
+                            "name": "ticketId",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "field",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 99,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nCheck if a specific field has been copied (for UI feedback)\n",
+                    "description": "<p>Check if a specific field has been copied (for UI feedback)</p>\n",
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 2882,
+                                "end": 2890,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "ticketId"
+                            },
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "pos": 2876,
+                                "end": 2881,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": "<p>The ticket ID</p>\n"
+                        },
+                        {
+                            "name": {
+                                "pos": 2918,
+                                "end": 2923,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "field"
+                            },
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "pos": 2912,
+                                "end": 2917,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": "<p>The field name</p>\n"
+                        },
+                        {
+                            "tagName": {
+                                "pos": 2946,
+                                "end": 2953,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "returns"
+                            },
+                            "comment": "<p>True if this field was most recently copied</p>\n"
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { Ticket } from '../../models/ticket.model';\r\n\r\n@Component({\r\n  selector: 'app-ticket-table',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './ticket-table.component.html',\r\n  styleUrls: ['./ticket-table.component.scss']\r\n})\r\nexport class TicketTableComponent {\r\n  @Input() tickets: Ticket[] = [];\r\n  copiedField: { ticketId: string; field: string } | null = null;\r\n\r\n  /**\r\n   * Copy a single field value to clipboard\r\n   * @param ticket The ticket containing the field\r\n   * @param field The field name to copy\r\n   * @param value The value to copy\r\n   */\r\n  copyField(ticket: Ticket, field: string, value: string): void {\r\n    if (!value.trim()) return;\r\n    \r\n    this.copyTextToClipboard(value);\r\n    \r\n    // Set the copied field for UI feedback\r\n    this.copiedField = { ticketId: ticket.ticketId, field };\r\n    \r\n    // Reset the copied field after 2 seconds\r\n    setTimeout(() => {\r\n      this.copiedField = null;\r\n    }, 2000);\r\n    \r\n    console.log(`Copied ${field} from ticket ${ticket.ticketId}`);\r\n  }\r\n\r\n  /**\r\n   * Copy text to clipboard with fallback\r\n   * @param text Text to copy\r\n   */\r\n  private copyTextToClipboard(text: string): void {\r\n    try {\r\n      // Try using the modern Clipboard API first\r\n      navigator.clipboard.writeText(text)\r\n        .then(() => {\r\n          console.log('Text copied to clipboard');\r\n        })\r\n        .catch(err => {\r\n          // If Clipboard API fails, try the fallback method\r\n          this.copyTextFallback(text);\r\n        });\r\n    } catch (err) {\r\n      // If Clipboard API is not available, use fallback\r\n      this.copyTextFallback(text);\r\n    }\r\n  }\r\n\r\n  /**\r\n   * Fallback method for copying text using a temporary textarea element\r\n   * @param text Text to copy\r\n   */\r\n  private copyTextFallback(text: string): void {\r\n    try {\r\n      // Create a temporary textarea element\r\n      const textArea = document.createElement('textarea');\r\n      textArea.value = text;\r\n      \r\n      // Make the textarea out of viewport\r\n      textArea.style.position = 'fixed';\r\n      textArea.style.left = '-999999px';\r\n      textArea.style.top = '-999999px';\r\n      document.body.appendChild(textArea);\r\n      \r\n      // Select and copy the text\r\n      textArea.focus();\r\n      textArea.select();\r\n      const successful = document.execCommand('copy');\r\n      \r\n      // Remove the temporary element\r\n      document.body.removeChild(textArea);\r\n      \r\n      if (successful) {\r\n        console.log('Text copied using fallback method');\r\n      } else {\r\n        console.error('Fallback copy method failed');\r\n      }\r\n    } catch (err) {\r\n      console.error('All clipboard copy methods failed:', err);\r\n    }\r\n  }\r\n\r\n  /**\r\n   * Check if a specific field has been copied (for UI feedback)\r\n   * @param ticketId The ticket ID\r\n   * @param field The field name\r\n   * @returns True if this field was most recently copied\r\n   */\r\n  isCopied(ticketId: string, field: string): boolean {\r\n    return !!this.copiedField && \r\n           this.copiedField.ticketId === ticketId && \r\n           this.copiedField.field === field;\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".table-responsive {\n  overflow-x: auto;\n  margin-bottom: 2rem;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);\n  border-radius: 0.5rem;\n  border: 1px solid #e1e8ed;\n}\n\n.ticket-table {\n  width: 100%;\n  border-collapse: separate;\n  border-spacing: 0;\n  background-color: white;\n\n  th {\n    background-color: #f1f8ff;\n    color: #2c3e50;\n    font-weight: 600;\n    text-align: left;\n    padding: 1.25rem 1rem;\n    border-bottom: 2px solid #e1e8ed;\n    font-size: 1rem;\n    position: sticky;\n    top: 0;\n    z-index: 10;\n    box-shadow: 0 1px 0 rgba(0,0,0,0.05);\n  }\n\n  td {\n    padding: 1.25rem 1rem;\n    border-bottom: 1px solid #e1e8ed;\n    vertical-align: top;\n    transition: background-color 0.2s ease;\n  }\n\n  .ticket-id {\n    white-space: nowrap;\n    font-weight: 500;\n    color: #3498db;\n  }\n\n  tr:last-child td {\n    border-bottom: none;\n  }\n\n  tr:hover {\n    background-color: #f8fafe;\n    td {\n      transition: background-color 0.2s ease;\n    }\n  }\n\n  // Zebra striping for better readability\n  tr:nth-child(even) {\n    background-color: #fafafa;\n    &:hover {\n      background-color: #f8fafe;\n    }\n  }\n}\n\n.cell-content {\n  display: flex;\n  align-items: flex-start;\n  gap: 1rem;\n  min-height: 2rem;\n}\n\n.text-container {\n  flex: 1;\n  max-height: 250px;\n  overflow-y: auto;\n  word-break: break-word;\n  padding-right: 0.5rem;\n  \n  &::-webkit-scrollbar {\n    width: 6px;\n  }\n  \n  &::-webkit-scrollbar-track {\n    background: #f1f1f1;\n    border-radius: 10px;\n  }\n  \n  &::-webkit-scrollbar-thumb {\n    background: #c1c1c1;\n    border-radius: 10px;\n  }\n  \n  &::-webkit-scrollbar-thumb:hover {\n    background: #a8a8a8;\n  }\n}\n\n.cell-text {\n  font-size: 0.95rem;\n  line-height: 1.6;\n  white-space: pre-wrap;\n  color: #4a4a4a;\n}\n\n.copy-btn {\n  background: none;\n  border: none;\n  cursor: pointer;\n  color: #3498db;\n  padding: 0.5rem;\n  border-radius: 0.375rem;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n  transition: all 0.2s ease;\n  margin-top: 0.25rem;\n  \n  &:hover {\n    background-color: #f1f8ff;\n    transform: translateY(-2px);\n    box-shadow: 0 2px 6px rgba(52, 152, 219, 0.2);\n  }\n  \n  &:active {\n    transform: translateY(0);\n  }\n  \n  &.copied {\n    color: #27ae60;\n    background-color: rgba(39, 174, 96, 0.1);\n  }\n}\n\n.copy-icon {\n  font-size: 1.25rem;\n}\n\n.no-data {\n  text-align: center;\n  padding: 3rem 2rem;\n  color: #7f8c8d;\n  background-color: #f8f9fa;\n  border-radius: 0.5rem;\n  margin-bottom: 2rem;\n  font-size: 1.1rem;\n  border: 1px dashed #e1e8ed;\n}",
+                    "styleUrl": "./ticket-table.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"table-responsive\">\r\n  <table class=\"ticket-table\">\r\n    <thead>\r\n      <tr>\r\n        <th>Ticket ID</th>\r\n        <th>Description</th>\r\n        <th>Details</th>\r\n        <th>Resolution</th>\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr *ngFor=\"let ticket of tickets\">\r\n        <td class=\"ticket-id\">\r\n          <div class=\"cell-content\">\r\n            <span class=\"cell-text\">{{ ticket.ticketId }}</span>\r\n            <button class=\"copy-btn\" (click)=\"copyField(ticket, 'ticketId', ticket.ticketId)\" [class.copied]=\"isCopied(ticket.ticketId, 'ticketId')\">\r\n              <i class=\"copy-icon\">{{ isCopied(ticket.ticketId, 'ticketId') ? '✓' : '📋' }}</i>\r\n            </button>\r\n          </div>\r\n        </td>\r\n        <td>\r\n          <div class=\"cell-content\">\r\n            <div class=\"text-container\">\r\n              <span class=\"cell-text\">{{ ticket.description || 'Not provided' }}</span>\r\n            </div>\r\n            <button class=\"copy-btn\" (click)=\"copyField(ticket, 'description', ticket.description)\" [class.copied]=\"isCopied(ticket.ticketId, 'description')\">\r\n              <i class=\"copy-icon\">{{ isCopied(ticket.ticketId, 'description') ? '✓' : '📋' }}</i>\r\n            </button>\r\n          </div>\r\n        </td>\r\n        <td>\r\n          <div class=\"cell-content\">\r\n            <div class=\"text-container\">\r\n              <span class=\"cell-text\">{{ ticket.details || 'Not provided' }}</span>\r\n            </div>\r\n            <button class=\"copy-btn\" (click)=\"copyField(ticket, 'details', ticket.details)\" [class.copied]=\"isCopied(ticket.ticketId, 'details')\">\r\n              <i class=\"copy-icon\">{{ isCopied(ticket.ticketId, 'details') ? '✓' : '📋' }}</i>\r\n            </button>\r\n          </div>\r\n        </td>\r\n        <td>\r\n          <div class=\"cell-content\">\r\n            <div class=\"text-container\">\r\n              <span class=\"cell-text\">{{ ticket.resolution || 'Not provided' }}</span>\r\n            </div>\r\n            <button class=\"copy-btn\" (click)=\"copyField(ticket, 'resolution', ticket.resolution)\" [class.copied]=\"isCopied(ticket.ticketId, 'resolution')\">\r\n              <i class=\"copy-icon\">{{ isCopied(ticket.ticketId, 'resolution') ? '✓' : '📋' }}</i>\r\n            </button>\r\n          </div>\r\n        </td>\r\n      </tr>\r\n    </tbody>\r\n  </table>\r\n</div>\r\n\r\n<div *ngIf=\"tickets.length === 0\" class=\"no-data\">\r\n  No ticket data found.\r\n</div>\r\n"
+        }
+    ],
+    "modules": [],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "angularApp",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/server.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "new AngularNodeAppEngine()"
+            },
+            {
+                "name": "app",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/server.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "express()"
+            },
+            {
+                "name": "appConfig",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.config.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "ApplicationConfig",
+                "defaultValue": "{\r\n  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideClientHydration(withEventReplay())]\r\n}"
+            },
+            {
+                "name": "bootstrap",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/main.server.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => bootstrapApplication(AppComponent, config)"
+            },
+            {
+                "name": "browserDistFolder",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/server.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "resolve(serverDistFolder, '../browser')"
+            },
+            {
+                "name": "config",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.config.server.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "mergeApplicationConfig(appConfig, serverConfig)"
+            },
+            {
+                "name": "reqHandler",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/server.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "createNodeRequestHandler(app)",
+                "rawdescription": "The request handler used by the Angular CLI (dev-server and during build).",
+                "description": "<p>The request handler used by the Angular CLI (dev-server and during build).</p>\n"
+            },
+            {
+                "name": "serverConfig",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.config.server.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "ApplicationConfig",
+                "defaultValue": "{\r\n  providers: [\r\n    provideServerRendering(),\r\n    provideServerRoutesConfig(serverRoutes)\r\n  ]\r\n}"
+            },
+            {
+                "name": "serverDistFolder",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/server.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "dirname(fileURLToPath(import.meta.url))"
+            },
+            {
+                "name": "serverRoutes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.routes.server.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "ServerRoute[]",
+                "defaultValue": "[\r\n  {\r\n    path: '**',\r\n    renderMode: RenderMode.Prerender\r\n  }\r\n]"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/server.ts": [
+                {
+                    "name": "angularApp",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/server.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "new AngularNodeAppEngine()"
+                },
+                {
+                    "name": "app",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/server.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "express()"
+                },
+                {
+                    "name": "browserDistFolder",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/server.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "resolve(serverDistFolder, '../browser')"
+                },
+                {
+                    "name": "reqHandler",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/server.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "createNodeRequestHandler(app)",
+                    "rawdescription": "The request handler used by the Angular CLI (dev-server and during build).",
+                    "description": "<p>The request handler used by the Angular CLI (dev-server and during build).</p>\n"
+                },
+                {
+                    "name": "serverDistFolder",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/server.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "dirname(fileURLToPath(import.meta.url))"
+                }
+            ],
+            "src/app/app.config.ts": [
+                {
+                    "name": "appConfig",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.config.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ApplicationConfig",
+                    "defaultValue": "{\r\n  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideClientHydration(withEventReplay())]\r\n}"
+                }
+            ],
+            "src/main.server.ts": [
+                {
+                    "name": "bootstrap",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/main.server.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => bootstrapApplication(AppComponent, config)"
+                }
+            ],
+            "src/app/app.config.server.ts": [
+                {
+                    "name": "config",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.config.server.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "mergeApplicationConfig(appConfig, serverConfig)"
+                },
+                {
+                    "name": "serverConfig",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.config.server.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ApplicationConfig",
+                    "defaultValue": "{\r\n  providers: [\r\n    provideServerRendering(),\r\n    provideServerRoutesConfig(serverRoutes)\r\n  ]\r\n}"
+                }
+            ],
+            "src/app/app.routes.server.ts": [
+                {
+                    "name": "serverRoutes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.routes.server.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ServerRoute[]",
+                    "defaultValue": "[\r\n  {\r\n    path: '**',\r\n    renderMode: RenderMode.Prerender\r\n  }\r\n]"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": [],
+    "coverage": {
+        "count": 18,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.config.server.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "config",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.config.server.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "serverConfig",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.config.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "appConfig",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.routes.server.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "serverRoutes",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/ticket-extractor/ticket-extractor.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TicketExtractorComponent",
+                "coveragePercent": 46,
+                "coverageCount": "7/15",
+                "status": "medium"
+            },
+            {
+                "filePath": "src/app/components/ticket-table/ticket-table.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TicketTableComponent",
+                "coveragePercent": 57,
+                "coverageCount": "4/7",
+                "status": "good"
+            },
+            {
+                "filePath": "src/app/models/ticket.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Ticket",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/services/ticket-data.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "TicketDataService",
+                "coveragePercent": 66,
+                "coverageCount": "4/6",
+                "status": "good"
+            },
+            {
+                "filePath": "src/main.server.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "bootstrap",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/server.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "angularApp",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/server.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "app",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/server.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "browserDistFolder",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/server.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "reqHandler",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "src/server.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "serverDistFolder",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 83,
+                "coverageCount": "5/6",
+                "status": "very-good"
+            },
+            {
+                "filePath": "src/stories/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/page.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/user.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "User",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            }
+        ]
+    }
+}
