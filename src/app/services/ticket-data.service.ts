@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
 import * as cheerio from 'cheerio';
+import { Injectable } from '@angular/core';
 import { Ticket } from '../models/ticket.model';
 
 @Injectable({
