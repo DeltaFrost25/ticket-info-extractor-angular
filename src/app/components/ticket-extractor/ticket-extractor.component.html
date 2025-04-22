@@ -38,9 +38,14 @@
   <div *ngIf="tickets.length > 0" class="results-container">
     <div class="results-header">
       <h2>Extracted Ticket Information</h2>
-      <button (click)="copyAll()" class="copy-all-btn" [class.copied]="copiedAll">
-        <i class="copy-icon">{{ copiedAll ? '✓' : '📋' }}</i> {{ copiedAll ? 'Copied!' : 'Copy All' }}
-      </button>
+      <div class="action-buttons">
+        <button (click)="downloadCsv()" class="download-csv-btn">
+          <i class="download-icon">📥</i> Download CSV
+        </button>
+        <button (click)="copyAll()" class="copy-all-btn" [class.copied]="copiedAll">
+          <i class="copy-icon">{{ copiedAll ? '✓' : '📋' }}</i> {{ copiedAll ? 'Copied!' : 'Copy All' }}
+        </button>
+      </div>
     </div>
 
     <app-ticket-table [tickets]="tickets"></app-ticket-table>

@@ -109,6 +109,13 @@ export class TicketExtractorComponent {
   getAllTicketDataAsText(): string {
     return this.ticketDataService.formatTicketDataAsText(this.tickets);
   }
+  
+  /**
+   * Get all ticket data as CSV
+   */
+  getAllTicketDataAsCsv(): string {
+    return this.ticketDataService.formatTicketDataAsCsv(this.tickets);
+  }
 
   /**
    * Copy text to clipboard with fallback
@@ -181,5 +188,27 @@ export class TicketExtractorComponent {
     setTimeout(() => {
       this.copiedAll = false;
     }, 2000);
+  }
+  
+  /**
+   * Download ticket data as CSV file
+   */
+  downloadCsv(): void {
+    if (this.tickets.length === 0) return;
+    
+    const csvContent = this.getAllTicketDataAsCsv();
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    
+    // Create download link and trigger click
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', this.fileName.replace('.html', '-ticket-data.csv'));
+    document.body.appendChild(link);
+    link.click();
+    
+    // Clean up
+    document.body.removeChild(link);
+    setTimeout(() => URL.revokeObjectURL(url), 100);
   }
 }
